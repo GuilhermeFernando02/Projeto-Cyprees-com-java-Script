@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyprees Discovery</title>
+</head>
+<body>
+    <!-- <h1>Olá, <span id= "nome"></span></h1> -->
+
+    <h1>CNH</h1>
+
+    <input type= "text" name = "nome" placeholder ="Qual seu primeiro nome" />
+    <input type= "number" name = "idade" placeholder ="Qual sua idade" />
+    <button type= "button" onclick = "verificarIdade()">Verificar Idade</button>
+    
+    <h2>Para tirar sua CNH, temos algumas recomendações</h2>
+    
+
+    <button type= "button" onclick = "listaRecomendações()"> Clique aqui para ver as recomendações</button>
+    
+    <ul id="recomendamos"> 
+
+         
+    </ul>
+
+    <script type="text/javascript">
+
+//api - Vamos supor que var recomendações - conseguimos pegar de uma API
+        var recomendamos = ['Para menores de 4 anos não possiu idade sulficiente para tirar a sua CNH', 
+        'Para menores de 18 anos ainda não podem tirar a CNH', 
+        'Para maiores de 18 anos podem tirar sua CNH', 
+        'Para maiores de 80 anos não podem mais tirar a CNH']
+
+        function listaRecomendações(){
+
+            var ul = document.getElementById('recomendamos')
+            ul.innerHTML = ''
+
+            recomendamos.forEach(function(a){
+
+                var li = document.createElement('li')
+                var text = document.createTextNode(a)
+                li.appendChild(text)
+                ul.appendChild(li)
+                
+
+            })
+        }
+
+
+           
+
+        function verificarIdade() {
+
+            var nome = document.querySelector('input[name=nome]')
+            var idade = document.querySelector('input[name=idade')
+
+            if (nome.value.length == 0) {
+                alert('Campo nome é obrigatório')
+                return
+            }
+
+            if (idade.value.length == 0) {
+                alert('Campo idade é obrigatório.')
+                return
+
+            }
+
+            var idadeNum = parseInt(idade.value)
+
+
+          if (idadeNum >=80) {
+              alert('Idade maxima ! Você não pode mais tirar sua CNH, desculpa !')
+          }
+           else if (idadeNum >= 18) {
+               alert('Parabéns você pode tirar sua CNH.')
+           } else if (idadeNum > 4) {
+               alert('Você ainda não pode tirar sua CNH, desculpa !')
+           } else {
+               alert('Você não tem idade para ter CNH.')
+           
+           }
+
+
+        }
+
+
+
+        //console.log(nome.value)
+        //console.log(typeof nome.value)
+        //console.log(idadeNum)
+        //console.log(typeof idadeNum)
+
+        //console.log(nome.value)
+            //console.log(typeof nome.value)
+            //console.log(idadeNum)
+            //console.log(typeof idadeNum)
+
+        // var nome = prompt("Qual sua idade");
+        // var recebeIdade = prompt("qual sua idade");
+
+        // var idade = parseInt(recebeIdade);
+
+        // console.log(nome);
+        // console.log(typeof nome);
+
+        // console.log(idade);
+        // console.log(typeof idade);
+
+
+        // document.getElementById("nome").innerText = nome;
+
+    </script>
+</body>
+</html>

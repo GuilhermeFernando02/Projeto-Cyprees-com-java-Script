@@ -1,0 +1,14 @@
+{
+  "name": "get-started",
+  "version": "1.0.0",
+  "description": "Primeiro exemplo com cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Guilherme Fernando",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.1.0"
+  }
+}
